@@ -1,0 +1,124 @@
+/*分分盈每日统计样式*/
+.ffy-buy-result{ overflow:hidden; text-align:center; background-color:#FFF; padding:15px 0}
+.ffy-everyday-data {
+	overflow: hidden;
+	text-align: center;
+	background-color: #FFF;
+	padding: 15px 0
+}
+.ffy-everyday-data p:nth-child(1) {
+	font-size: 16px;
+	color: #999999;
+	line-height: 1
+}
+.ffy-everyday-data p:nth-child(2) {
+	font-size: 16px;
+	color: #fe5e5e;
+	line-height: 1.6
+}
+.ffy-everyday-data p:nth-child(2) span {
+	font-size: 28px
+}
+.ffy-everyday-list li {
+	background-color: #FFF;
+	margin-top: 10px;
+	display: block;
+	width: 100%;
+	overflow: hidden
+}
+.ffy-everyday-list li div {
+	height: 30px;
+	line-height: 30px;
+	background-color: #cccccc;
+	color: #FFF;
+	font-size: 14px;
+	overflow: hidden;
+	width: 45%;
+	float: left
+}
+.ffy-everyday-list li div span {
+	margin-left: 15px
+}
+.ffy-everyday-list li:nth-child(1) div {
+	background-color: #0d91e7
+}
+/*分分盈交易列表样式*/
+.ffy-buy-result p {
+	padding: 10px 15px;
+	font-size: 14px;
+	color: #454545
+}
+.ffy-ul-list {
+	overflow: hidden;
+	background-color: #FFF;
+	padding-left: 10px
+}
+.ffy-div-list .ffy-p-title {
+	font-size: 16px;
+	padding: 8px 10px
+}
+.ffy-ul-list li {
+	border-top: 1px solid #e8e8e8
+}
+.ffy-ul-list li:nth-child(1) {
+	border: 0 none
+}
+.ffy-ul-list a {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding: 5px 0
+}
+.ffy-ul-list a p {
+	padding-right: 25px;
+	font-size: 16px;
+	color: #454545
+}
+.ffy-ul-list a p:nth-child(2) {
+	font-size: 14px
+}
+.lose-color {
+	color: #fc9f59
+}
+.success-color {
+	color: #43ad31
+}
+.day-color {
+	color: #999999
+}
+.ffy-ul-list img {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -7px;
+	display: block
+}
+/*分分盈主页样式*/
+.ffy-div-question{ padding:5px 10px; overflow:hidden}
+.ffy-div-question span{ font-size:12px; color:#FFF}
+.ffy-div-main{ overflow:hidden; background:-webkit-linear-gradient(#0a8ce6, #5cb0e8);}
+.ffy-div-profit{ text-align:center; overflow:hidden; margin-top:10px}
+.ffy-div-profit p{ color:#FFF; font-size:12px; line-height:1.6}
+.ffy-divb-profit{ padding:10px 0; overflow:hidden; background-color:#0090f0}
+.ffy-divb-profit div{ width:50%; color:#FFF; box-sizing:border-box; -webkit-box-sizing:border-box}
+.ffy-divb-profit div:nth-child(1) p{ padding-left:15px; font-size:12px; text-align:left}
+.ffy-divb-profit div:nth-child(2) p{ padding-right:15px; font-size:12px; text-align:right}
+.ffy-divb-profit div:nth-child(1){border-right:1px solid #FFF}
+.ffy-divb-profit div p:nth-child(1){ line-height:1}
+.ffy-divb-profit div p:nth-child(2){ font-size:16px;}
+.ffy-div-btn .ffy-btn-nm{ width:50%; text-align:center; height:60px; background-color:#FFF; color:#454545; font-size:16px;line-height:60px}
+.ffy-div-btn .ffy-btn-out{ width:50%; text-align:center; height:60px; background-color:#fe5e5e; color:#ffffff; font-size:16px; line-height:60px}
+.ffy-div-btn .ffy-btn-in{ width:50%; text-align:center; height:60px; background-color:#fe5e5e; color:#ffffff; font-size:16px; line-height:60px}
+.ffy-block{
+	display: block;
+	color: inherit;
+}
+.ffy-ul-list{ overflow:hidden; background-color:#FFF; padding-left:10px}
+.ffy-div-list .ffy-p-title{ font-size:16px; padding:8px 10px}
+.ffy-ul-list li{ border-top:1px solid #e8e8e8}
+.ffy-ul-list li:nth-child(1){ border:0 none}
+.ffy-ul-list a{ display:block; overflow:hidden; position:relative; width:100%; padding:5px 0}
+.ffy-ul-list a p{ padding-right:25px; font-size:16px; color:#454545}
+.ffy-ul-list a p:nth-child(2){ font-size:14px}
+.ffy-ul-list img{ position:absolute; right:10px; top:50%; margin-top:-7px; display:block}

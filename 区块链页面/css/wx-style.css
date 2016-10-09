@@ -1,0 +1,108 @@
+body{
+        background-color: #ffffff
+    }
+    .ins-mobile{
+      background-color: #ffffff;
+      padding: 15px 10px 15px 30px;
+      overflow: hidden;
+      border-bottom:1px solid #e8e8e8;
+      border-top: 15px solid #eeeeee;
+      box-sizing: border-box;
+      background-image: url(../images/mobile-icon.png);
+      background-repeat: no-repeat;
+      background-size: auto 16px;
+      background-position:7px center
+    }
+    .ins-mobile .mobile-input{
+      font-size: 16px;
+      border: 0 none;
+      color: #999999;
+      display: block;
+    }
+    .ins-code{
+        background-color: #ffffff;
+        padding-left: 30px;
+        overflow: hidden;
+        border-bottom:1px solid #e8e8e8;
+        box-sizing: border-box;
+        background-image: url(../images/lock-icon.png);
+        background-repeat: no-repeat;
+        background-size: auto 16px;
+        background-position:7px center
+    }
+    .ins-code .code-btn{
+       padding:0 14px;
+       text-align: center;
+       font-size: 14px;
+       color:#999999;
+        border: 0 none;
+       border-left:1px solid #e8e8e8;
+        box-sizing: border-box;
+        width: 110px;
+        display: block;
+        background: 0 none;
+        height: 53px;
+        line-height: 53px
+        
+    }
+    .ins-code .code-input{
+      margin:17px 0;
+      font-size: 16px;
+      border: 0 none;
+      color: #999999;
+      display: block;
+      width: 130px
+    }
+    .wx-safe-msg{
+        background-color: #ffffff;
+        text-align: center;
+        padding: 20px 0;
+        color: #454545;
+        font-size: 16px;
+        margin-bottom: 10px
+    }
+    .ins-button{
+        width: 90%;
+        padding: 10px;
+        color: #ffffff;
+        font-size: 16px;
+        text-align: center;
+        margin: 20px auto;
+        background-color: #3fbc22;
+        border-radius: 5px;
+        border:0 none;
+        display: block
+    }
+.div-next {
+    margin: 0 auto;
+    padding: .3em .8em;
+    padding-top: 20px;
+}
+.btn-style {
+    background-color: #3fbc22;
+    color: #FFF;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    color: #FFF;
+    width: 100%;
+    margin: 0 auto;
+    border: 0 none;
+}
+.btn-style4 {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #3fbc22;
+	background: 0;
+	text-align: center;
+	display: block;
+	border: 1px solid #3fbc22;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-bottom: 12px;
+	margin-top: 12px
+}

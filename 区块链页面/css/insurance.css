@@ -1,0 +1,425 @@
+@charset 'utf8';
+html{
+	font-size: 10px;
+}
+body{
+	background-color: #eee;
+	font-size: 10px;
+	margin: 0px auto;
+}
+em{
+  font-style: normal;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+.ins-mt5{
+	margin-top: .5rem!important;
+}
+.ins-mt15{
+	margin-top: .9375rem!important;
+}
+
+.ins-mt35{
+	margin-top: 2.1875rem!important;
+}
+.ins-mt50{
+	margin-top: 3.125rem!important;
+}
+.ins-mt20{
+	margin-top: 1.25rem!important;
+}
+.ins-mt30{
+	margin-top: 30px!important;
+}
+.ins-mb40{
+	margin-bottom: 2.5rem!important;
+}
+.ins-mb30{
+	margin-bottom: 1.875rem!important;
+}
+
+.ins-mb15{
+	margin: .9375rem!important;
+}
+.ins-mb85{
+	margin-bottom: 5.3125rem;
+}
+.ins-mr1{
+	margin-right: 1rem!important;
+}
+.ins-ml1{
+	margin-left: 1rem!important;
+}
+.ins-mr5{
+	margin-right: .5rem!important;	
+}
+.ins-mr15{margin-right: .9375rem!important;}
+.ins-pd15{
+	padding:0 0.9375rem;
+	padding-right:0
+}
+
+.ins-p15{
+	padding: .9375rem!important;
+}
+
+.ins-pd1{
+	padding: .5rem!important;
+}
+
+.ins-pd5{
+	padding: .5rem 0!important;
+}
+.ins-pdt1{
+	padding: 1rem 0!important;
+}
+
+.ins-auto{
+	margin: 0 auto;
+}
+
+.ins-ft20{
+	font-size: 1.25rem!important;
+}
+.ins-ft24{
+	font-size: 1.5rem!important;
+}
+.ins-ft28{
+	font-size: 1.75rem!important;
+}
+.ins-ft30{
+	font-size: 1.875rem!important;
+}
+.ins-ft40{
+	font-size: 2.5rem!important;
+}
+.ins-ft60{
+	font-size: 3.75rem!important;
+}
+.ins-block{
+	display: block;
+}
+.ins-inblock{
+	display:inline-block;
+}
+.ins-center{
+	text-align: center;
+}
+.ins-none{
+	display: none;
+}
+.ins-unline{
+	text-decoration: underline;
+}
+.ins-color-red{
+	color: #ec3a36;
+}
+.ins-color-title{
+	color: #454545;
+}
+.ins-color-info{
+	color: #454545;
+}
+.ins-color-black{
+	color: #6a6a6a;
+}
+.ins-ht75{
+	height: 5.0rem!important;
+	line-height: 5.0rem!important;
+}
+.ins-ht90{
+	height: 5.625rem!important;
+	line-height: 5.625rem!important;
+}
+.ins-mt45{ margin-top:45px}
+.ins-nolineht75{
+	height: 4.6875rem!important;
+}
+.ins-nolineht90{
+	height: 5.625rem!important;
+}
+.ins-ht30{
+	height: 1.875rem!important;
+	line-height: 1.875rem!important;
+}
+.ins-wt32{
+	width: 32%!important;
+}
+.ins-wt50{
+	width: 50%!important;
+}
+.ins-wt75{
+	width: 75%!important;
+}
+.ins-w25{
+	width: 25%!important;
+}
+.ins-w40{
+	width: 40%!important;
+}
+.ins-w90{
+	width: 90%!important;
+}
+.ins-bg{
+	background-color: #fff;
+}
+.ins-container{
+	/* margin-bottom: 5.3125rem; */
+}
+.ins-brd0{
+	border: 0;
+}
+.ins-brdt1{
+	border-top:1px solid #e8e8e8!important;
+}
+.ins-brdb1{
+	border-bottom:1px solid #e8e8e8!important;
+	box-sizing:border-box;
+}
+.ins-brd1{
+	border:1px solid #e5e5e5!important;
+}
+.ins-hide{
+	overflow: hidden;
+}
+.ins-row{
+    overflow: hidden;
+    word-break: break-word;
+    position: relative;
+}
+.ins-bd{
+	font-weight:bold;
+}
+
+.ins-introduction{
+	text-align: center;
+}
+
+.ins-introduction,.ins-buy-user,.ins-detail{
+	background-color: #fff;
+	overflow: hidden;
+}
+.ins-button{
+	background-color: #eb3c36;
+	width: 100%;
+	height: 40px;
+	border: 0;
+	font-size: 1.5rem;
+	color: #fff;
+	/* position: fixed; */
+	bottom: 0;
+	line-height:40px;
+	text-align:center;
+	display: block;
+}
+.ins-fixed{
+	position: fixed;
+}
+.ins-add{
+	padding:.5rem;
+}
+.ins-num{
+	width: 40%;
+	text-align: center;
+	padding: .5rem 0;
+}
+
+.ins-arrow:after{
+	content: '';
+    width: 1rem;
+    height: 1rem;
+    border: #7e7e7e solid;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    -webkit-transform: rotate(-45deg);
+    right: .5rem;
+    position: absolute;
+    top: 2rem;
+}
+.ins-getcode{
+	color: #3da6ff;
+	background-color: #fff;
+    border: 0;
+}
+.ins-getcode img{ height:30px; display:inline-block; float:left;}
+.ins-getcode-disabled{
+	color: #b9b9b9;	
+}
+.ins-getcode:before{
+	content: '';    
+    border: #e8e8e8 solid;
+    height: 3rem;
+    border-width: 0 1px 0px 0;
+    display: inline-block;    
+    position: absolute;
+    top: 1.0rem;
+    left: 65%;
+}
+
+.ins-bill:before {
+    content: '';
+    border: #b9b9b9 solid;
+    height: 3rem;
+    border-width: 0 1px 0px 0;
+    display: inline-block;
+    position: absolute;
+    top: .7rem;
+    left: 50%;
+}
+
+.ins-radius2{	
+	border-radius: 2rem;
+	-moz-border-radius:2rem;
+	-o-border-radius:2rem;
+	-webkit-border-radius:2rem;
+}
+.ins-radius1{
+	border-radius: 1rem;
+	-moz-border-radius:1rem;
+	-o-border-radius:1rem;
+	-webkit-border-radius:1rem;	
+}
+
+.bank-img {
+	background-size: 100%;
+	background-image: url(../images/bank-list.png);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.ins-middle{
+	vertical-align: middle;
+}
+.ins-add-bank{
+	background-size: 100%;
+	background-image: url(../images/add-bank.png);
+	background-repeat: no-repeat;
+	width: 18px;
+	height: 18px;
+}
+
+.ins-disabled{
+	background-color: #999999;
+	color: #f9f9f9;
+}
+.ins-ul-list{
+
+}
+.ins-ul-list li{
+	border-top: 1px solid #e5e5e5;
+	padding: 1rem 0;
+}
+.ins-ul-list li:first-child{
+	border:0;
+}
+.ins-pay-list{
+	overflow: hidden;
+}
+.ins-pay-list li{
+	padding: 1.0rem!important;
+	margin-top: 1.0rem!important;
+	color: #fff;
+	border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    -webkit-border-radius: 1rem; 
+    position: relative;   
+    overflow: hidden;
+    
+}
+.ins-pay-list li:after{
+	content:'';
+	background-image: url('../images/pay-bank-list.png');
+    background-repeat: no-repeat;    
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    background-size: cover;
+    bottom: -10px;
+    opacity: .5;
+    right: 1rem;
+
+} 
+.ins-pay-list .B007:after{background-position: 0px -68px;} /*招商银行*/
+.ins-pay-list .B004:after{background-position: 0px 0px;}/**建设*/
+.ins-pay-list .B001:after{background-position: 0px -129px;}/*中国银行**/
+.ins-pay-list .B010:after{background-position: 0px -192px;}/*光大银行**/
+.ins-pay-list .B009:after {
+    background-position: 0px -260px;
+}/*中信银行*/
+.ins-pay-list .B006:after {
+    background-position: 0px -320px;
+}/*邮储银行*/
+.ins-pay-list .B014:after {
+    background-position: 0px -372px;
+}/*兴业银行*/
+.ins-pay-list .B015:after {
+    background-position: 0px -418px;
+}/*浦发银行*/
+.ins-pay-list .B041:after {
+    background-position: 0px -465px;
+}/*平安银行*/
+.ins-pay-list .B002:after {
+    background-position: 0px -504px;
+}/*农业银行*/
+.ins-pay-list .B008:after {
+    background-position: 0px -560px;
+}/*民生银行*/
+.ins-pay-list .B005:after {
+    background-position: 0px -616px;
+}/*交通银行*/
+.ins-pay-list .B012:after {
+    background-position: 0px -672px;
+}/*广发银行*/
+.ins-pay-list .B003:after {
+    background-position: 0px -728px;
+}/*工商银行*/
+.ins-pay-list li >p:first-child{
+	font-size: 1.5rem!important;
+}
+
+
+.ins-pay-list li >p:last-child{
+	font-size: 1.25rem!important;
+}
+.ins-line-dashed{
+	border:1px dashed #ec3a36;
+} 
+.ins-bank-color-1{
+	background-color: #37b9ec;
+}
+.ins-bank-color-2{
+	background-color: #deaa0d;
+}
+.ins-bank-color-3{
+	background-color: #77cb15;
+}
+.ins-bank-color-4{
+	background-color: #ee7a40;
+}
+.ins-color-fff{
+	color: #fff;
+}
+.ins-pay-bank-list{
+	
+}
+.span-blue{
+	color:#098fe6
+	}

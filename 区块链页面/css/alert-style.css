@@ -1,0 +1,28 @@
+.div-msg{ width:60%; border-radius:5px; background:#FFF; position:fixed; left:20%; top:100px; overflow:hidden; text-align:center; line-height:25px; font-size:14px;z-index: 2222}
+.alert-button{ width:50%; height:40px; line-height:40px; text-align:center; color:#3399ff; background:#FFF; border:0 none; box-sizing:border-box; display:inline; float:left; -webkit-appearance:none; outline:none; font-size:16px}
+.div-msg .p-title{ border-bottom:1px solid #e8e8e8; padding:0 10px}
+.div-msg p:nth-child(1){ padding-top:5px}
+.zhezhao-bg{ position:fixed; width:100%; height:100%; z-index:111; background-color:#000; opacity:0.6; display:none; top:0}
+.box{ float:left; position:relative; padding:1px; top:10%;  opacity:0.5;z-index:4;  opacity:1; }
+.box_bg{}
+.box2{ width:100%; height:100%; margin:0 auto; z-index:5; position:fixed; }
+
+.tips{ position:relative;width:40%;top: 157px;margin: 0 auto ;  background:#222222; border-radius:8px; line-height:1.6; padding:0 5%}
+.tips1{
+	    width:100%; 
+        font-size: 18px;color: white; padding:5% 0
+}
+.tips1 img{ width:27px
+}
+.window{
+    text-align: center;vertical-align: middle;
+}
+.adver{
+
+    text-align: center;
+    margin-top: 10%;
+    width: 100%;
+}
+.adver img{
+    width: 100%;
+}

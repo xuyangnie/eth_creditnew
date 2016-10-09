@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8">
+    <title>查询还款</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/flat-ui.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+	<script type='text/javascript' src="js/web3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+	
+</head>
+<style>
+      body,html {
+        font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
+        height: 100%;
+    }
+    .select{
+        min-width: 100px;
+    }
+    .form-group .select{
+        width: auto;
+        min-width: 100px;
+    }
+    .navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #F1C40F;
+  background-color: transparent;
+}
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #F39C12;
+}
+    .navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #F1C40F;
+  background-color: transparent;
+}
+    .button-large {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 40px;
+}
+
+</style>
+<body>
+   <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="navbar-brand" href="#">联动消费金融</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="contract.html">借贷合同</a></li>
+			<li><a href="loan.html">借款操作</a></li>
+            <li  class="active"><a href="#contact">还款操作</a></li>
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="page-header" style="margin-top:0">
+                    <h4>还款<small></small></h4>
+                </div>
+                <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" >还款金额</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" id="repayAmt" placeholder="还款金额">
+                        </div>
+                    </div>                   
+                </form>
+               
+            </div>
+            <div class="col-md-3">
+              <div class="btn-fixed">
+                <a  href="javascript:void(0);" onclick="callQulContract()" class="button button-glow button-rounded button-highlight" style="display:block; width:100%; margin-top:10px">查询</a>
+                <a href="javascript:void(0);" onclick="callRepayContract()" class="button button-block button-rounded button-large" style="height:40px; margin-top:10px">还款</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/js/flat-ui.min.js"></script>
+
+    <script src="js/js/application.js"></script>
+
+<script>
+      $(document).ready(function(){
+        $('select[name="inverse-dropdown"], select[name="inverse-dropdown-optgroup"], select[name="inverse-dropdown-disabled"]').select2({dropdownCssClass: 'select-inverse-dropdown'});
+
+        $('select[name="searchfield"]').select2({dropdownCssClass: 'show-select-search'});
+        $('select[name="inverse-dropdown-searchfield"]').select2({dropdownCssClass: 'select-inverse-dropdown show-select-search'});
+      });
+    </script>
+	
+	<script type='text/javascript'>
+		if(typeof web3 !== 'undefined'){
+			web3 = new Web3(web3.currentProvider);
+		} else {
+			web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
+		}
+		
+		//var address = '0x6253b3bc3712ca43345b9d0f5c9a091ba5f1dcab';
+		var MyContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"paidAmount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"repayDate","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"repay","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"contractAmount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"debit","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"credit","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"qryBal","outputs":[{"name":"retVal","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"state","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[],"name":"loan","outputs":[],"type":"function"},{"inputs":[{"name":"_debit","type":"address"},{"name":"_repayDate","type":"uint256"}],"type":"constructor"}]
+        );
+		var contractAddress = sessionStorage.getItem("contractAddress");
+		var myContractInstance = MyContract.at(contractAddress);
+        console.info("还款时合约地址:"+contractAddress);
+		//还款
+        function callRepayContract(){
+			var repayAmt = document.getElementById('repayAmt').value;//还款金额input值
+			if(repayAmt == "" || repayAmt == 'undefined'){
+				alert("请输入还款金额！")
+			}else{
+				
+				var repayAmount = web3.toWei(repayAmt, 'ether');		
+				console.log("值："+repayAmount);
+				console.info("开始还款");
+				myContractInstance.repay.sendTransaction( {from: web3.eth.accounts[1],value:repayAmount});
+				console.info("还款请求已发送 等待挖矿确认交易");
+				}
+        }
+        //查询
+        function callQulContract(){
+            console.info("开始查询实时余额");
+			var result=	myContractInstance.qryBal.call();
+            result = web3.fromWei(result, 'ether');
+            $('#repayAmt').val(result);
+				console.info("查询到余额:"+result);
+        }
+	</script>
+</html>

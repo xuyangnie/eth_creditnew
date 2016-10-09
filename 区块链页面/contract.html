@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8">
+    <title>借款合同</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/flat-ui.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+	<script type='text/javascript' src="js/web3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+	
+</head>
+<style>
+      body,html {
+        font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
+        height: 100%;
+    }
+    .select{
+        min-width: 100px;
+    }
+    .form-group .select{
+        width: auto;
+        min-width: 100px;
+    }
+    .navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #F1C40F;
+  background-color: transparent;
+}
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #F39C12;
+}
+    .navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #F1C40F;
+  background-color: transparent;
+}
+    .button-large {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 40px;
+}
+
+</style>
+<body>
+    <iframe src="contract.html" style="display:none; height:0;"></iframe>
+   <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="navbar-brand" href="#">联动消费金融</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">首页</a></li>
+            <li class="active"><a href="#about">借贷合同</a></li>
+			<li><a href="loan.html">借款操作</a></li>
+            <li><a href="repay.html">还款操作</a></li>
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="page-header" style="margin-top:0">
+                    <h4>借贷合同<small>Loan contract</small></h4>
+                </div>
+                <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" >借款方</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="debit" class="form-control"  placeholder="借款方">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="col-sm-2 control-label" >出资方</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="credit" class="form-control"  placeholder="出资方">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label class="col-sm-2 control-label" >担保方</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control"  placeholder="担保方">
+                        </div>
+                    </div>
+					-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" >借款金额</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" id="amount" placeholder="借款金额">
+                        </div>
+                    </div>
+					<!--
+                    <div class="form-group ">
+                        <label class="col-sm-2 control-label" for="exampleInputPassword1">保证金</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="保证金">
+                        </div>
+                    </div>
+					-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="exampleInputPassword2">还款日期</label>
+                        <div class="col-sm-8">
+                            <input type="datetime" class="form-control" id="repayDate" placeholder="还款日期">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+              <div class="btn-fixed">
+                <a href="javascript:void(0);" onclick="createExampleContract()" class="button button-glow button-rounded button-highlight" style="display:block; width:100%; margin-top:10px">确认合约</a>
+
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/js/flat-ui.min.js"></script>
+
+    <script src="js/js/application.js"></script>
+
+<script>
+      $(document).ready(function(){
+        $('select[name="inverse-dropdown"], select[name="inverse-dropdown-optgroup"], select[name="inverse-dropdown-disabled"]').select2({dropdownCssClass: 'select-inverse-dropdown'});
+
+        $('select[name="searchfield"]').select2({dropdownCssClass: 'show-select-search'});
+        $('select[name="inverse-dropdown-searchfield"]').select2({dropdownCssClass: 'select-inverse-dropdown show-select-search'});
+      });
+    </script>
+	
+	<script type='text/javascript'>
+		if(typeof web3 !== 'undefined'){
+			web3 = new Web3(web3.currentProvider);
+		} else {
+			web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
+		}
+        //获取账号地址
+        var accounts = web3.eth.accounts;
+        $('#debit').val(accounts[1]);
+        $('#credit').val(accounts[0]);
+        //创建借款合同
+		//创建借款合同
+        function createExampleContract() {
+            var mycontractContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"paidAmount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"repayDate","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"repay","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"contractAmount","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"debit","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"credit","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"qryBal","outputs":[{"name":"retVal","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"state","outputs":[{"name":"","type":"uint8"}],"type":"function"},{"constant":false,"inputs":[],"name":"loan","outputs":[],"type":"function"},{"inputs":[{"name":"_debit","type":"address"},{"name":"_repayDate","type":"uint256"}],"type":"constructor"}]
+            );
+				web3.eth.defaultAccount = web3.eth.coinbase;
+				console.log("创建合约时的默认账户地址：" + web3.eth.defaultAccount);
+				console.info("创建合约请求已发送 ");
+				var contractEthAmount = document.getElementById('amount').value;//合约金额input
+				var contractWeiAmount = web3.toWei(contractEthAmount, 'ether');
+				var address_debit = web3.eth.accounts[1];
+				console.log("合约金额以太币值："+contractEthAmount);
+				console.log("合约金额wei值："+contractWeiAmount);
+				var repayDate = document.getElementById('repayDate').value;//还款日期input
+				mycontractTT = mycontractContract.new(address_debit,repayDate,
+						{
+							from: web3.eth.accounts[0],
+							data: '6060604052604051604080610503833981016040528080519060200190919080519060200190919050505b33600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff0219169083021790555081600060006101000a81548173ffffffffffffffffffffffffffffffffffffffff0219169083021790555034600260005081905550806004600050819055506000600560006101000a81548160ff021916908302179055505b5050610445806100be6000396000f360606040523615610095576000357c01000000000000000000000000000000000000000000000000000000009004806312fa769f14610097578063241b2ac8146100ba578063402d8883146100dd578063565a57ca146100ec5780639c8fa9ca1461010f578063a06d083c14610148578063b384e6aa14610181578063c19d93fb146101a4578063d285b7b4146101c757610095565b005b6100a460048050506101d6565b6040518082815260200191505060405180910390f35b6100c760048050506101df565b6040518082815260200191505060405180910390f35b6100ea60048050506101e8565b005b6100f9600480505061030d565b6040518082815260200191505060405180910390f35b61011c6004805050610316565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610155600480505061033c565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61018e6004805050610362565b6040518082815260200191505060405180910390f35b6101b1600480505061037b565b6040518082815260200191505060405180910390f35b6101d4600480505061038e565b005b60036000505481565b60046000505481565b6002600050546003600050541415610218576005600560006101000a81548160ff02191690830217905550610002565b6001600560006101000a81548160ff02191690830217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600034604051809050600060405180830381858888f1935050505015156102ad576004600560006101000a81548160ff021916908302179055506100025661030a565b34600360008282825054019250508190555060026000505460036000505414156102ef576005600560006101000a81548160ff02191690830217905550610309565b6003600560006101000a81548160ff021916908302179055505b5b5b565b60026000505481565b600060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600360005054600260005054039050610378565b90565b600560009054906101000a900460ff1681565b6001600560006101000a81548160ff02191690830217905550600060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166000600260005054604051809050600060405180830381858888f193505050501515610428576002600560006101000a81548160ff0219169083021790555061000256610442565b6003600560006101000a81548160ff021916908302179055505b5b56',
+							gas: 2000000,
+							value: contractWeiAmount,
+						}, function (e, contract) {
+							console.info("创建合约返回");
+							console.log(e, contract);
+							if (typeof contract.address != 'undefined') {
+								console.info("创建合约成功");
+								console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+								myContract = contract;  								
+                                contractAddress = contract.address;	
+                                sessionStorage.setItem("contractAddress",contractAddress);
+                                alert('创建合约成功');
+                            } else {
+								console.info("创建合约等待确认交易");
+							}
+						});
+        }
+	</script>
+</html>
